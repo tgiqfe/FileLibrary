@@ -1,7 +1,4 @@
-﻿using MongoDB.Bson;
-using MongoDB.Driver;
-using MongoDB.Driver.Linq;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -42,8 +39,11 @@ namespace FileLibrary
 
                 //  対象のフォルダーを検索してFileLibraryリストを取得
                 if (args.Length == 0) { return; }
-                string targetDir = args[0];
+
+                UpdateLibrary ul = new UpdateLibrary();
+                ul.Search(args[0]);
                 
+                /*
                 //  DB接続開始
                 ConnectDB cdb = new ConnectDB(GlobalItem.MongoDB, GlobalItem.DBName);
                 cdb.Connect_fllist(GlobalItem.CollectionName_fllist);
@@ -117,6 +117,7 @@ namespace FileLibrary
                 acList.Add(new ActivityLog(1, "global", endMessage));
                 Console.WriteLine(endMessage);
                 cdb.Collection_aclist.InsertMany(acList);
+                */
             }
         }
     }

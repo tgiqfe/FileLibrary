@@ -21,6 +21,16 @@ using System.Collections.Generic;
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific languag
 */
+
+/*  Libraryに格納するファイル/フォルダー情報は、
+ *      - ファイル名
+ *      - 基準ディレクトリからの相対パス
+ *      - 更新日時
+ *      - ハッシュ
+ *      - ファイルorフォルダーの判定
+ *  のみとして、アクセス権、所有者、属性、アクセス日時、作成日時は無視します。
+ *  マルチOSを想定しているので、このへんを保存してられない。
+ */
 namespace FileLibrary
 {
     class FileLibrary
